@@ -1,0 +1,92 @@
+.content {
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 16vh;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    &__logo {
+      width: 385px;
+      height: auto;
+    }
+
+    &__subtitle {
+      width: 100%;
+      text-align: center;
+      font-size: rem(20px);
+      color: #CCCCCC;
+      margin-bottom: 40px;
+
+      span {
+        color: $yellow;
+      }
+    }
+
+    &__scroll {
+      width: 205px;
+      margin-top: 14vh;
+
+      img {
+        animation: circle 20s linear infinite
+      }
+    }
+    @keyframes circle {
+      from {
+          transform: rotate(-360deg);
+      }
+      to {
+          transform: rotate(0);
+      }
+    }
+  }
+
+  .text {
+    margin: 10vh auto;
+    
+    @include s {
+      width: 84%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    b {
+      color: $yellow;
+      font-weight: 400;
+    }
+
+    &__title {
+      position: relative;
+      font-size: rem(26px);
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 6vw;
+        min-width: 80px;
+        height: 4px;
+        background: $yellow;
+        top: 100%;
+        left: 0;
+      }
+    }
+
+    &__expertises {
+      @include s {
+        width: 30%;
+      }
+    }
+
+    &__content {
+      @include s {
+        width: 70%;
+      }
+    }
+
+    &__description {
+      margin-bottom: 30px;
+    }
+  }
+}

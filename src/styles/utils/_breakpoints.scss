@@ -1,0 +1,58 @@
+/**
+breakpoints {
+    xs : 640px to 767px,
+    s : 768px to 1023px,
+    md : 1024px to 1279px,
+    l : 1280px to 1439px,x
+    xl : 1440px to 1919px,
+    xxl : > 1920px
+
+
+using:
+    @include xs {
+        background: red
+    }
+*/
+
+@mixin header {
+  @media only screen and  (min-width: 1080px) { @content; }
+}
+@mixin header-max {
+  @media only screen and  (max-width: 1079px) { @content; }
+}
+@mixin xs {
+  @media only screen and  (min-width: 576px) { @content; }
+}
+@mixin xs-only {
+  @media only screen and  (min-width: 576px) and (max-width: 767px) { @content; }
+}
+@mixin s {
+  @media only screen and  (min-width: 768px) { @content; }
+}
+@mixin s-only {
+  @media only screen and  (min-width: 768px) and (max-width: 1023px) { @content; }
+}
+@mixin s-max {
+  @media only screen and  (max-width: 1023px) { @content; }
+}
+@mixin md {
+  @media only screen and  (min-width: 1024px) { @content; }
+}
+@mixin md-only {
+  @media only screen and  (min-width: 1024px) and (max-width: 1279px) { @content; }
+}
+@mixin l {
+  @media only screen and  (min-width: 1280px) { @content; }
+}
+@mixin l-only {
+  @media only screen and  (min-width: 1280px) and (max-width: 1439px) { @content; }
+}
+@mixin xl {
+  @media only screen and  (min-width: 1440px) { @content; }
+}
+@mixin xl-only {
+  @media only screen and  (min-width: 1440px) and (max-width: 1919px){ @content; }
+}
+@mixin xxl {
+  @media only screen and  (min-width: 1920px){ @content; }
+}

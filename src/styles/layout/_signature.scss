@@ -1,0 +1,18 @@
+.signature {
+  background-color: $white;
+  padding: 6vh 0;
+  color: $black;
+  text-align: center;
+
+  &__title {
+    font-weight: bold;
+    font-size: rem(22px);
+  }
+
+  &__content {
+    a {
+      color: $black;
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+
+
+.header {
+  padding: 30px 0;
+  @include s {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__image {
+    width: 40%;
+    max-width: 200px;
+  }
+  
+  &__title {
+    margin: 10px 0;
+    font-size: rem(20px);
+    @include s {
+      font-size: rem(22px);
+    }
+  }
+}
