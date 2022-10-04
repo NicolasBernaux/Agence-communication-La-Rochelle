@@ -11,7 +11,7 @@ module.exports = (ctx) => {
               preset: 'default'
             }),
             purgecss({
-              content: ['./**/*.html'],
+              content: ['./**/*.html', './**/*.ejs'],
               keyframes: true,
               defaultExtractor: (content) => content.match(/[A-z0-9-:/]+/g)
             })
