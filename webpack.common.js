@@ -4,10 +4,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const WriteFilePlugin = require('write-file-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const PreloadWebpackPlugin = require('preload-webpack-plugin');
-const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 
-const content = require('./content.js');
+const content = require('./content');
 
 module.exports = {
   mode: 'development',
@@ -76,6 +74,7 @@ module.exports = {
       filename: 'index.html',
       template: './src/index.ejs',
       inject: 'head',
+      scriptLoading: 'defer',
       templateParameters: content
     }),
     new HtmlWebpackPlugin({
@@ -83,19 +82,6 @@ module.exports = {
       filename: '404.html',
       template: './src/404.html',
       inject: 'head'
-    }),
-    new PreloadWebpackPlugin({
-      rel: 'preload',
-      as(entry) {
-        if (/\.(woff|woff2|ttf|otf)$/.test(entry)) {
-          return 'font';
-        }
-      },
-      fileWhitelist: [/\.(woff|woff2|ttf|otf)$/],
-      include: 'allAssets'
-    }),
-    new ScriptExtHtmlWebpackPlugin({
-      defaultAttribute: 'defer'
     })
   ],
   externals: {
